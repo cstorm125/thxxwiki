@@ -126,7 +126,7 @@ if __name__ == "__main__":
     )
     df["rnk"] = (
         df.sort_values("use_score", ascending=False)
-        .groupby("id_en")
+        .groupby(["src","id_en"])
         .cumcount()
         + 1
     )
